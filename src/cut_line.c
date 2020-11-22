@@ -89,7 +89,6 @@ int					cut_line(char *line, t_read *read, t_node **v, t_node **e)
 		}
 		return (1);
 	}
-	ft_printf("****\n");
 	if (cut_line2(line, read, v, e) < 0)
 		return (-1);
 	else

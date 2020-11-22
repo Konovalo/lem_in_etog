@@ -79,7 +79,7 @@ int				read_map(char **a, t_read *re, t_graph *graph)
 		if (cut_line(line, re, &v_list, &e_list) < 0)
 		{
 			free(line);
-			return (0);
+			return (-1);
 		}
 		free(line);
 	}
@@ -100,7 +100,10 @@ int				main(int argc, char *argv[])
 	an = NULL;
 	init(&read, argc);
 	if (read_map(argv, &read, &graph) < 0)
+	{
+		ft_putstr_fd("Error\n", 2);
 		return (-1);
+	}
 	bfs(&graph, &paths);
 	zap_ant(&an, dll_length(paths));
 	poisk(&paths);
@@ -113,5 +116,3 @@ int				main(int argc, char *argv[])
 	free_paths(paths);
 	return (0);
 }
-
-//gcc check_v.c commons_structures.h libft/headers/ft_gnl.h libft/ft_gnl/ft_gnl.c -Ilibft/headers -Llibft -lft
