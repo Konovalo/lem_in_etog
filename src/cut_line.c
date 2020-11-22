@@ -56,7 +56,7 @@ int				cut_line2(char *l, t_read *read, t_node **v_l, t_node **e_list)
 		read->i = cut_line5(l, &read);
 		l[read->i] = '\0';
 		read->i++;
-		if (cut_line7(l, read, v_l, e_list) < 0)
+		if (read->i > read->len || cut_line7(l, read, v_l, e_list) < 0)
 			return (-1);
 		ft_strdel(&(read->time.s1));
 		ft_strdel(&(read->time.s2));
@@ -91,5 +91,8 @@ int				cut_line(char *line, t_read *read, t_node **v, t_node **e)
 	}
 	if (cut_line2(line, read, v, e) < 0)
 		return (-1);
+	else
+		return (-1);
+	
 	return (1);
 }
