@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   zap_vertex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 15:50:56 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/22 15:56:32 by heantoni         ###   ########.fr       */
+/*   Updated: 2020/11/22 19:29:54 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
-e_vertex_type		zap_type(t_read **read)
+t_vertex_type		zap_type(t_read **read)
 {
-	e_vertex_type	type;
+	t_vertex_type	type;
 
 	if ((*read)->n == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 00:13:07 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/22 18:54:15 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/11/22 19:01:52 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,13 @@ int				cut_line(char *line, t_read *read, t_node **v, t_node **e)
 	{
 		if (ft_strcmp(line, "##start") == 0)
 			read->n += 1;
-		else
-		{
-			if (ft_strcmp(line, "##end") == 0)
-				read->k += 1;
-		}
+		else if (ft_strcmp(line, "##end") == 0)
+			read->k += 1;
 		return (1);
 	}
 	if (cut_line2(line, read, v, e) < 0)
 		return (-1);
 	else
 		return (-1);
-	
 	return (1);
 }

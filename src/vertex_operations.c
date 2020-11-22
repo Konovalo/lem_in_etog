@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vertex_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 00:35:00 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/22 01:09:39 by heantoni         ###   ########.fr       */
+/*   Updated: 2020/11/22 19:29:38 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int			vertex_cmp(t_vertex *v1, t_vertex *v2)
 	return (FALSE);
 }
 
-t_vertex	*vertex_create(t_int t, char *name, e_vertex_type type, int k)
+t_vertex	*vertex_create(t_int t, char *name, t_vertex_type type, int k)
 {
 	t_vertex	*v;
 
