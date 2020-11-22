@@ -30,7 +30,7 @@ int				cut_line4(char *l, t_read **read)
 
 int				cut_line7(char *l, t_read *read, t_node **v_l, t_node **e_list)
 {
-	if ((!(read->time.s1 = ft_strdup(l))) || \
+	if (read->n == 0 || read->k == 0 || (!(read->time.s1 = ft_strdup(l))) || \
 		(!(read->time.s2 = ft_strdup(&l[read->i]))) || \
 		zap_edge(v_l, e_list, &(read->time)) < 0)
 		return (-1);
@@ -70,14 +70,11 @@ int				cut_line(char *line, t_read *read, t_node **v, t_node **e)
 {
 	if (line[0] == '#' && line[1] != '#')
 		return (1);
-	if (line[0] != '#' && read->ant == -1 && (read->ant = ft_atoi(line)) > 0 \
+	if (line[0] != '#' && read->ant == -1 && (read->ant = ft_atoi(line)) > 0\
 			&& ft_strlen(line) == ft_sizenbr(read->ant))
-	{
-		if (read->ant < 0)
+				return (1);
+	else if (read->ant < 0)
 			return (-1);
-		else
-			return (1);
-	}
 	if (line[0] == '#' && line[1] == '#')
 	{
 		if (ft_strcmp(line, "##start") == 0)
@@ -87,8 +84,6 @@ int				cut_line(char *line, t_read *read, t_node **v, t_node **e)
 		return (1);
 	}
 	if (cut_line2(line, read, v, e) < 0)
-		return (-1);
-	else
 		return (-1);
 	return (1);
 }

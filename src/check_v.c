@@ -99,7 +99,9 @@ int				main(int argc, char *argv[])
 
 	an = NULL;
 	init(&read, argc);
-	if (read_map(argv, &read, &graph) < 0)
+	if (read_map(argv, &read, &graph) < 0 || graph.edges == NULL \
+	|| graph.vertex == NULL || read.k == 0 || read.n == 0 || \
+	read.k > 2 || read.n > 2)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (-1);
