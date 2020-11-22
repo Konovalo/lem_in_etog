@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   print_ant.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 19:39:49 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/22 15:50:16 by heantoni         ###   ########.fr       */
+/*   Updated: 2020/11/22 18:46:17 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 
-int			zap_print_ant(t_node **mass, int *ogi, t_ant_node *anti, t_read *read)
+int			zap_print_ant(t_node **mass, int *ogi, t_ant_node *anti,\
+			t_read *read)
 {
 	t_node	*ti;
 	t_node	*tim;

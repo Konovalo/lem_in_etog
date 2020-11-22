@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_v.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 14:41:08 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/21 22:15:37 by heantoni         ###   ########.fr       */
+/*   Updated: 2020/11/22 18:53:53 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,3 @@ int				main(int argc, char *argv[])
 	free_paths(paths);
 	return (0);
 }
-
-//gcc check_v.c commons_structures.h libft/headers/ft_gnl.h libft/ft_gnl/ft_gnl.c -Ilibft/headers -Llibft -lft

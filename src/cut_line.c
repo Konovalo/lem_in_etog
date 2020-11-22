@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_line.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heantoni <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 00:13:07 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/21 22:51:09 by heantoni         ###   ########.fr       */
+/*   Updated: 2020/11/22 18:54:15 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int				cut_line2(char *l, t_read *read, t_node **v_l, t_node **e_list)
 	return (1);
 }
 
-int					cut_line(char *line, t_read *read, t_node **v, t_node **e)
+int				cut_line(char *line, t_read *read, t_node **v, t_node **e)
 {
 	if (line[0] == '#' && line[1] != '#')
 		return (1);

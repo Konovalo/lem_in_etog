@@ -6,7 +6,7 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 14:38:25 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/11/22 16:53:20 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/11/22 18:57:35 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # define FALSE	0
 # define TRUE	1
 
-/*
-** Количество вершин. Присваивается при анализе входных данных.
-*/
-
 int g_vert_num;
 
 typedef struct		s_node
@@ -30,31 +26,12 @@ typedef struct		s_node
 	const void		*data;
 }					t_node;
 
-/*
-** Множество типов вершин.
-*/
-
-typedef enum s_vertex_type
+typedef enum	s_vertex_type
 {
 	START, MIDDLE, END
-} e_vertex_type;
+}				e_vertex_type;
 
-
-/*
-** Вершина графа.
-**
-** x, y - координаты;
-** name - имя вершины;
-** type - тип вершины;
-** io - моделирование "задвоения" (in/out) вершины, содержит ссылки на 
-** текущую вершину;
-** f_io_direct - направленеи "ребара" между "задвоенными" вершинами,
-** 0 - in->out. 1 - out->in.
-** bfs_level - счётчик итераций алгоритма поиска в ширину;
-** edges - список рёбер.
-*/
-
-typedef struct s_vertex
+typedef struct	s_vertex
 {
 	int x;
 	int y;
@@ -64,24 +41,14 @@ typedef struct s_vertex
 	int visited;
 	t_node			*i_edges;
 	int				k;
-} t_vertex;
+}				t_vertex;
 
-/*
-** Ребро графа.
-**
-** vertex - ссылки на элементы массива io соотв вершины. Моделирование
-** связей между "задвоенными" вершинами.
-** f_edge_direct - направление ребра: 0 -  без направления, >0 - от вершины
-** vertex[0] к вершине [1], <0 - в обратном направлении.
-** visit_cout - счётчик проходов алгоритмом поиска пути по ребру.
-*/
-
-typedef struct s_edge
+typedef struct		s_edge
 {
 	t_vertex *vertex[2];
 	int visit_count;
 	
-} t_edge;
+}					t_edge;
 
 typedef struct	s_graph
 {
@@ -89,45 +56,40 @@ typedef struct	s_graph
 	t_node		*edges;
 } t_graph;
 
-// взять, проерка на наличие start и end
-
-typedef struct  s_time
+typedef struct		s_time
 {
     char			*s1;
     char			*s2;
     char			*s3;
-	e_vertex_type   type;
-}               t_time;
+	e_vertex_type	type;
+}					t_time;
 
 typedef struct  s_read
 {
 	t_time		time;
 	int			len;
-    int         n;
+	int			n;
 	int			argc;
-    int         k;
+	int			k;
 	int			ant;
 	t_vertex	*v;
 	int			tim;
-	int         fd;
+	int			fd;
 	int			i;
 	int			kol;
 	t_node		*paths;
-}               t_read;
+}				t_read;
 
-typedef struct              s_ant_node
+typedef struct				s_ant_node
 {
-    int                     ant;
-    struct s_ant_node       *next;
-}                           t_ant_node;
+	int						ant;
+	struct s_ant_node		*next;
+}							t_ant_node;
 
-/*
-** Множество режимов работы алгоритма bfs
-*/
-typedef enum s_bfs_work_mode
+typedef enum				s_bfs_work_mode
 {
 	FIRST_ALG_PASS, SECOND_ALG_PASS
-} e_bfs_work_mode;
+}							e_bfs_work_mode;
 
 typedef struct		s_temp
 {

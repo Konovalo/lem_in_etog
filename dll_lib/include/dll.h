@@ -6,13 +6,15 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 14:42:41 by aeclipso          #+#    #+#             */
-/*   Updated: 2020/11/22 15:21:52 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/11/22 18:52:04 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DLL_H
 # define DLL_H
+
 # include <stdlib.h>
+
 typedef struct		s_node
 {
 	struct s_node	*next;

@@ -6,7 +6,7 @@
 #    By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/22 15:52:34 by aeclipso          #+#    #+#              #
-#    Updated: 2020/11/22 16:09:49 by aeclipso         ###   ########.fr        #
+#    Updated: 2020/11/22 18:49:14 by aeclipso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,30 +28,15 @@ SRCF = ants.c\
 	zap_edge_ini.c\
 	zap_edge_one.c\
 	zap_edge_two.c\
-	zap_vertex.c\
-	dll_add_first.c\
-	dll_add_last.c\
-	dll_add_n.c\
-	dll_get.c\
-	dll_get_first.c\
-	dll_get_last.c\
-	dll_get_n.c\
-	dll_length.c\
-	dll_new_node.c\
-	dll_peek.c\
-	dll_peek_first.c\
-	dll_peek_last.c\
-	dll_peek_n.c\
-	dll_pop.c\
-	dll_push.c
+	zap_vertex.c
 
 OBJD = ./obj/
 SRC = $(addprefix $(SRCD), $(SRCF))
 OBJ = $(addprefix $(OBJD), $(OBJF))
 OBJF = $(SRCF:.c=.o)
-LIBS = ./libft/libft.a
-HEADERS = -I ./include -I ./libft/include
-HDR = ./include/lemin.h ./libft/include/libft.h
+LIBS = ./libft/libft.a ./dll_lib/dll.a
+HEADERS = -I ./include -I ./libft/include -I ./dll_lib/include
+HDR = ./include/lemin.h ./libft/include/libft.h ./dll_lib/include/dll.h
 FLAGS = -Wall -Wextra -Werror -g
 CC = gcc
 COMP = $(CC) $(FLAGS) $(OBJ) $(LIBS) -o $(NAME)
@@ -62,9 +47,9 @@ all: obj $(NAME)
 obj:
 	mkdir -p $(OBJD)
 
-$(NAME): libft/libft.a $(OBJ) $(HDR)
+$(NAME): $(LIBS) $(OBJ) $(HDR)
 	$(COMP)
-	@printf "Compilating lem-in done"
+	@printf "Compilating lem-in done\n"
 
 $(OBJD)%.o:$(SRCD)%.c $(HDR)
 	$(RECOMP)
