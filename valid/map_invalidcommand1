@@ -1,0 +1,6 @@
+./lem-in ./valid/map_loop1./lem-in ./valid/map_loop3
+start 0 0
+##end
+end 1 1
+##start
+start-end

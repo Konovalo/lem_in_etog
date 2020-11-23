@@ -6,7 +6,7 @@
 #    By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/22 14:49:19 by aeclipso          #+#    #+#              #
-#    Updated: 2020/11/22 15:23:07 by aeclipso         ###   ########.fr        #
+#    Updated: 2020/11/23 19:52:00 by aeclipso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC=./src/dll_add_first.c\
 
 OBJ = $(SRC:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -g -O2
+FLAGS = -Wall -Wextra -Werror -g
 
 NAME=dll.a
 

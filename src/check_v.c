@@ -6,11 +6,17 @@
 /*   By: aeclipso <aeclipso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 14:41:08 by heantoni          #+#    #+#             */
-/*   Updated: 2020/11/22 18:53:53 by aeclipso         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:23:48 by aeclipso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
+
+void			error_manager(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(0);
+}
 
 void			init(t_read *read, int argc)
 {
@@ -77,10 +83,7 @@ int				read_map(char **a, t_read *re, t_graph *graph)
 	while (get_next_line(re->fd, &line) != 0)
 	{
 		if (cut_line(line, re, &v_list, &e_list) < 0)
-		{
-			free(line);
-			return (-1);
-		}
+			error_manager();
 		free(line);
 	}
 	if (re->argc == 2)
@@ -102,10 +105,7 @@ int				main(int argc, char *argv[])
 	if (read_map(argv, &read, &graph) < 0 || graph.edges == NULL \
 	|| graph.vertex == NULL || read.k == 0 || read.n == 0 || \
 	read.k > 2 || read.n > 2)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (-1);
-	}
+		error_manager();
 	bfs(&graph, &paths);
 	zap_ant(&an, dll_length(paths));
 	poisk(&paths);

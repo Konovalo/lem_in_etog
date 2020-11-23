@@ -1,0 +1,13 @@
+./lem-in ./valid/map_comments
+./lem-in ./valid/map_duplicatepipe
+./lem-in ./valid/map_duplicatepipe1   //leak
+./lem-in ./valid/map_flow_max
+./lem-in ./valid/map_invalidcommand
+./lem-in ./valid/map_invalidcommand1 !!!!!! sega
+./lem-in ./valid/map_loop       !!!!! sega    !!!!!осталась
+./lem-in ./valid/map_loop1    !!!sega          !!!!!осталась
+./lem-in ./valid/map_overflow
+./lem-in ./valid/map_simple 
+./lem-in ./valid/map_simple1 !!!!sega           !!!!осталась
+./lem-in ./valid/map_simple2
+./lem-in ./valid/map_slack  
