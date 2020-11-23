@@ -79,6 +79,17 @@ void			zap_edge_678(t_node **e_list, t_temp *tmp)
 	zap_edge8(e_list, &(tmp->v2), &(tmp->v4));
 }
 
+void			zap_edge513(t_node **e_list, t_vertex **v1, t_vertex **v4)
+{
+	t_edge		*e1;
+
+	e1 = NULL;
+	e1 = edge_create(*v1, *v4);
+	edge_list_add_all(e_list, e1);
+	edge_list_add_first(&((*v4)->i_edges), e1);
+	edge_list_add_first(&((*v1)->i_edges), e1);
+}
+
 int				zap_edge(t_node **v_list, t_node **e_list, t_time *time)
 {
 	t_temp		tmp;
@@ -101,6 +112,8 @@ int				zap_edge(t_node **v_list, t_node **e_list, t_time *time)
 			zap_edge4(e_list, &tmp.v1, &tmp.v3, &tmp.v4);
 		if (tmp.v2 && tmp.v3 && tmp.v2->type != START && tmp.v3->type == END)
 			zap_edge5(e_list, &tmp.v2, &tmp.v3, &tmp.v4);
+		if (tmp.v1 && tmp.v4 && tmp.v1->type == START && tmp.v4->type == END)
+			zap_edge513(e_list, &tmp.v1, &tmp.v4);
 	}
 	return (1);
 }
